@@ -11,7 +11,7 @@ from mobile_tests_lesson_13.model import app
 def test_open_wikipedia_app():
     primary_list = 'org.wikipedia.alpha:id/primaryTextView'
     forward_button = 'org.wikipedia.alpha:id/fragment_onboarding_forward_button'
-    acceptButton = 'org.wikipedia.alpha:id/acceptButton'
+    accept_button = 'org.wikipedia.alpha:id/acceptButton'
 
     with step("Verify that first screen opened"):
         assert browser.element((AppiumBy.ID, primary_list)).matching(
@@ -33,7 +33,7 @@ def test_open_wikipedia_app():
     with step("Verify that third screen opened"):
         browser.wait_until((AppiumBy.ID, primary_list))
         assert browser.element((AppiumBy.ID, primary_list)).matching(
-            have.text("You can make reading lists"))
+            have.text("Reading lists with sync"))
         if browser.element(
                 (AppiumBy.ID, forward_button)).should(be.visible):
             browser.element(
@@ -44,6 +44,6 @@ def test_open_wikipedia_app():
         assert browser.element((AppiumBy.ID, primary_list)).matching(
             have.text("Send anonymous data"))
         if browser.element(
-                (AppiumBy.ID, acceptButton)).should(be.visible):
+                (AppiumBy.ID, accept_button)).should(be.visible):
             browser.element(
-                (AppiumBy.ID, acceptButton)).click()
+                (AppiumBy.ID, accept_button)).click()
