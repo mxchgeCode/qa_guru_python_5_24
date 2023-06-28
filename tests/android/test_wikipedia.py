@@ -4,10 +4,9 @@ from selene import have
 from selene.support.shared import browser
 from allure import step
 from selene import be
-from mobile_tests_lesson_13.model import app
 
 
-# @allure.step("Открываем страницу википедии")
+@allure.step("Открываем страницу википедии")
 def test_open_wikipedia_app():
     primary_list = 'org.wikipedia.alpha:id/primaryTextView'
     forward_button = 'org.wikipedia.alpha:id/fragment_onboarding_forward_button'
