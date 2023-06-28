@@ -31,3 +31,5 @@ def test_open_wikipedia_app():
         if browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView')).matching(
                 have.text("Send anonymous data")):
             browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/acceptButton')).click()
+
+
