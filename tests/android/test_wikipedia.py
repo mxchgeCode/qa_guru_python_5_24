@@ -15,7 +15,9 @@ def test_check_for_search_resuls_1():
         browser.element(
             (AppiumBy.ID, 'org.wikipedia.alpha:id/fragment_onboarding_forward_button')).click()
     else:
-        browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/fragment_onboarding_skip_button')).click()
+        browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/view_card_header_title')).matching(
+            have.text("Featured article")
+        )
 
     allure.dynamic.tag("Verify that second screen opened")
     if browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView')).matching(
@@ -30,6 +32,6 @@ def test_check_for_search_resuls_1():
     allure.dynamic.tag("Verify that forth screen opened")
     if browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView')).matching(
             have.text("Send anonymous data")):
-        print('All Ok')
+        browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/acceptButton')).click()
 
 
