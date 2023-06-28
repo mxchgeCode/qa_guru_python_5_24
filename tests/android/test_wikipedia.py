@@ -3,12 +3,10 @@ from appium.webdriver.common.appiumby import AppiumBy
 from selene import have
 from selene.support.shared import browser
 from allure import step
-from selene import be
-from mobile_tests_lesson_13.model import app
 
 
 @allure.step("Открываем страницу википедии")
-def test_check_for_search_resuls_1():
+def test_open_wikipedia_app():
     with step("Verify that first screen opened"):
         if browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView')).matching(
                 have.text("The Free Encyclopedia")):
